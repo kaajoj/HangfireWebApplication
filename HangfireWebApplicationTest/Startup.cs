@@ -69,6 +69,10 @@ namespace HangfireWebApplicationTest
                 () => Console.WriteLine("Recurring job!"),
                 Cron.Minutely);
 
+            RecurringJob.AddOrUpdate("id-job2",
+                () => Console.WriteLine("Recurring job2"),
+                "*/15 * * * *");
+
             app.UseRouting();
 
             app.UseAuthorization();

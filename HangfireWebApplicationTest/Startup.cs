@@ -47,7 +47,7 @@ namespace HangfireWebApplicationTest
             services.AddControllersWithViews();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IBackgroundJobClient backgroundJobs)
         {
             if (env.IsDevelopment())
             {
@@ -62,6 +62,8 @@ namespace HangfireWebApplicationTest
             app.UseStaticFiles();
 
             app.UseHangfireDashboard();
+
+            backgroundJobs.Enqueue(() => Console.WriteLine("Hangfire!"));
 
             app.UseRouting();
 

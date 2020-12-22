@@ -1,4 +1,4 @@
-# HangfireWebApplication
+# Hangfire Web Application
 Sample web application using Hangfire
 
 More information in my blog post:\

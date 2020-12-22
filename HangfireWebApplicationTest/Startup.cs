@@ -61,6 +61,8 @@ namespace HangfireWebApplicationTest
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseHangfireDashboard();
+
             app.UseRouting();
 
             app.UseAuthorization();

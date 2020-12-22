@@ -65,6 +65,10 @@ namespace HangfireWebApplicationTest
 
             backgroundJobs.Enqueue(() => Console.WriteLine("Hangfire!"));
 
+            RecurringJob.AddOrUpdate(
+                () => Console.WriteLine("Recurring job!"),
+                Cron.Minutely);
+
             app.UseRouting();
 
             app.UseAuthorization();
